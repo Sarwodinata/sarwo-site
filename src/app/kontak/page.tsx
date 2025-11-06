@@ -28,14 +28,14 @@ export default function KontakPage() {
             className="rounded-xl border bg-white p-4 hover:border-primary/40 transition"
           >
             <h3 className="font-heading text-slate-900">WhatsApp</h3>
-            <p className="text-slate-700 mt-1">+62 822-8730-3663</p>
+            <p className="text-slate-700 mt-1">+62 822-7791-4806</p>
           </a>
           <a
             href={`mailto:${EMAIL_TO}`}
             className="rounded-xl border bg-white p-4 hover:border-primary/40 transition"
           >
             <h3 className="font-heading text-slate-900">Email</h3>
-            <p className="text-slate-700 mt-1">{EMAIL_TO}</p>
+            <p className="text-slate-700 mt-1">sarwodinata07@gmail.com</p>
           </a>
           <a
             href="https://github.com/Sarwodinata"
