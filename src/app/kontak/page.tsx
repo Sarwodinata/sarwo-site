@@ -1,25 +1,55 @@
-export default function Kontak() {
+import ContactForm from "./ContactForm";
+
+export const metadata = {
+  title: "Kontak • Sarwo Dinata",
+  description:
+    "Hubungi Sarwo Dinata untuk kolaborasi, tugas kuliah, atau proyek freelance.",
+};
+
+export default function KontakPage() {
+  const WA_NUMBER = "6282287303663";
+  const EMAIL_TO = "sarwo@example.com"; // ganti ke email asli
+
   return (
-    <section className="max-w-3xl mx-auto text-center">
-      <h1 className="text-3xl font-heading text-primary mb-4">Kontak Saya</h1>
-      <p className="mb-6">
-        Kamu bisa menghubungi saya lewat WhatsApp atau email untuk diskusi, kolaborasi, atau proyek bersama.
-      </p>
-      <div className="flex flex-col items-center gap-3">
-        <a
-          href="https://wa.me/6282287303663"
-          target="_blank"
-          className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-blue-700"
-        >
-          WhatsApp
-        </a>
-        <a
-          href="mailto:sarwodinata@example.com"
-          className="text-primary hover:underline"
-        >
-          sarwodinata@example.com
-        </a>
-      </div>
-    </section>
+    <main className="max-w-4xl mx-auto">
+      <section className="rounded-2xl border bg-white p-6 sm:p-8">
+        <h1 className="text-3xl font-heading font-bold text-slate-900">
+          Kontak
+        </h1>
+        <p className="mt-2 text-slate-700">
+          Butuh bantuan tugas/koding, mau kolaborasi, atau sekadar tanya? Kirim
+          pesan pakai WhatsApp (paling cepat) atau Email.
+        </p>
+
+        <div className="mt-5 grid gap-4 sm:grid-cols-3">
+          <a
+            href={`https://wa.me/${WA_NUMBER}`}
+            target="_blank"
+            className="rounded-xl border bg-white p-4 hover:border-primary/40 transition"
+          >
+            <h3 className="font-heading text-slate-900">WhatsApp</h3>
+            <p className="text-slate-700 mt-1">+62 822-8730-3663</p>
+          </a>
+          <a
+            href={`mailto:${EMAIL_TO}`}
+            className="rounded-xl border bg-white p-4 hover:border-primary/40 transition"
+          >
+            <h3 className="font-heading text-slate-900">Email</h3>
+            <p className="text-slate-700 mt-1">{EMAIL_TO}</p>
+          </a>
+          <a
+            href="https://github.com/Sarwodinata"
+            target="_blank"
+            className="rounded-xl border bg-white p-4 hover:border-primary/40 transition"
+          >
+            <h3 className="font-heading text-slate-900">GitHub</h3>
+            <p className="text-slate-700 mt-1">Sarwodinata</p>
+          </a>
+        </div>
+      </section>
+
+      {/* form interaktif yang berjalan di client */}
+      <ContactForm />
+    </main>
   );
 }
