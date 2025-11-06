@@ -1,57 +1,23 @@
+// src/app/layout.tsx
 import "./globals.css";
-import { Inter, Poppins } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import "./globals.css";
-import ThemeProvider from "./theme-provider";
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const poppins = Poppins({ subsets: ["latin"], weight: ["600", "700"], variable: "--font-poppins" });
+import type { Metadata } from "next";
+import Navbar from "../components/Navbar";
+import Script from "next/script";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Sarwo Dinata",
-  description: "Belajar, membangun dan berbagi",
+  description: "Personal site",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id">
-      <body className={`${inter.variable} ${poppins.variable} font-sans bg-slate-50 text-slate-900`}>
-        <Navbar />
-        <main className="pt-20 px-6 min-h-[80vh]">{children}</main>
-        <Footer />
-        import "./globals.css";
-import { ThemeProvider } from "./theme-provider";
-
-export const metadata = {
-  title: "Sarwo Dinata",
-  description: "Belajar, membangun dan berbagi",
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="id" suppressHydrationWarning>
-      <body className="bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors">
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
-      </body>
+      <head>
+              </head>
+<body className="min-h-screen bg-white text-slate-900 antialiased">
+  <Navbar />
+  <main className="pt-20">{children}</main>
+</body>
     </html>
   );
 }
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="id" suppressHydrationWarning>
-      <body>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
-  );
-}
-      </body>
-    </html>
-  );
-}
-

@@ -1,28 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-
-/* Token warna tema */
+/* Token warna tema (opsional) */
 :root {
-  --bg: 255 255 255;     /* putih */
-  --fg: 15 23 42;        /* slate-900 */
+  --bg: 255 255 255;
+  --fg: 15 23 42;
 }
-
 html.dark {
   --bg: 15 23 42;
   --fg: 226 232 240;
 }
-/* Helper container */
-.container-prose {
-  @apply max-w-5xl mx-auto px-6;
-}
 
-/* Komponen kartu (bebas dipakai di halaman) */
-.card {
-  @apply rounded-2xl border border-slate-200/70 bg-white/70 backdrop-blur
+/* Helper container */
+.container-prose { @apply max-w-4xl mx-auto px-6; }
+
+/* Komponen kartu */
+.card { 
+  @apply rounded-xl border border-slate-200/70 bg-white/80 backdrop-blur
          dark:border-slate-700/60 dark:bg-slate-900/40 p-5;
 }
 
-/* Heading & paragraf global opsional */
-h1, h2, h3 { @apply font-heading; }
+/* Heading global (sementara pakai font-sans dulu) */
+h1, h2, h3 { @apply font-sans; }
