@@ -17,8 +17,8 @@ export default function ContactForm() {
     pesan: "",
   });
 
-  const WA_NUMBER = "6282287303663"; // ganti bila perlu
-  const EMAIL_TO = "sarwo@example.com"; // ganti ke email kamu
+  const WA_NUMBER = "6282277914806"; // ganti bila perlu
+  const EMAIL_TO = "sarwodinata07@gmail.com"; // ganti ke email kamu
 
   const isValidEmail = (v: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
