@@ -2,7 +2,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Sarwo Dinata",
