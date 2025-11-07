@@ -1,11 +1,8 @@
-// next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  experimental: {
-    tsconfigPaths: true
-  }
+  // Next.js 16 sudah aktifkan App Router & tsconfig alias otomatis
 };
 
 export default nextConfig;
