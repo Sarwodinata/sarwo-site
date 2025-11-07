@@ -1,23 +1,69 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Token warna tema (opsional) */
+@layer base {
+  :root { --bg:#F8FAFC; --fg:#0B1220; --muted:#6B7280; }
+  .dark { --bg:#0B1220; --fg:#E5E7EB; --muted:#9CA3AF; }
+  html, body { @apply bg-[var(--bg)] text-[var(--fg)] antialiased; }
+}
+
+/* --- Reveal base --- */
+.reveal { opacity: 0; transform: translateY(8px); }
+.reveal.is-visible { opacity: 1; transform: none; transition: all .6s ease-out; }
+
+/* --- Variants --- */
+.reveal.fade { transform: none; }                /* hanya fade */
+.reveal.slide-up { transform: translateY(16px); }
+.reveal.slide-right { transform: translateX(-16px); }
+.reveal.slide-left { transform: translateX(16px); }
+
+/* --- Delay helpers --- */
+.delay-0   { transition-delay: 0ms; }
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* === Mood Theme Variables (di-root / :root & .dark) === */
 :root {
-  --bg: 255 255 255;
-  --fg: 15 23 42;
+  --bg: #f7f9fc;
+  --fg: #0a0f1c;
+  --accent: #1e5eff;
 }
-html.dark {
-  --bg: 15 23 42;
-  --fg: 226 232 240;
-}
-
-/* Helper container */
-.container-prose { @apply max-w-4xl mx-auto px-6; }
-
-/* Komponen kartu */
-.card { 
-  @apply rounded-xl border border-slate-200/70 bg-white/80 backdrop-blur
-         dark:border-slate-700/60 dark:bg-slate-900/40 p-5;
+.dark {
+  --bg: #0c1220;
+  --fg: #e6ebff;
+  --accent: #6ea8ff;
 }
 
-/* Heading global (sementara pakai font-sans dulu) */
-h1, h2, h3 { @apply font-sans; }
+/* Variasi mood (bisa ditumpuk di html[data-mood="..."]) */
+html[data-mood="tenang"] {
+  --accent: #2eaadc;
+  --bg: #f3fbff;
+}
+html.dark[data-mood="tenang"] { --bg: #06131a; }
+
+html[data-mood="energi"] { --accent: #ff5a36; --bg: #fff8f5; }
+html.dark[data-mood="energi"] { --bg: #160d0a; }
+
+html[data-mood="inovatif"] { --accent: #7a3cff; --bg: #f7f4ff; }
+html.dark[data-mood="inovatif"] { --bg: #0f0920; }
+
+html[data-mood="artistik"] { --accent: #00e0a4; --bg: #0b0f12; } /* dark artistik */
+
+/* helper warna ke Tailwind variables */
+:root, .dark { color-scheme: light dark; }
+
+/* === Reveal/scroll helpers (sudah kita pakai juga) === */
+.reveal { opacity: 0; transform: translateY(8px); }
+.reveal.is-visible { opacity: 1; transform: none; transition: all .6s ease-out; }
+
+/* micro story keyframes */
+@keyframes shards { 0%{opacity:0; transform:scale(.8)} 60%{opacity:.9; transform:scale(1.05)} 100%{opacity:1; transform:scale(1)} }
+@keyframes tagline { from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none} }
+
+/* Scroll scene background (day→night etc.) */
+body.scene-day  { background: linear-gradient(180deg,#eef4ff,transparent 40%); }
+body.scene-dusk { background: linear-gradient(180deg,#ffe9c9,transparent 40%); }
+body.scene-night{ background: linear-gradient(180deg,#0b1224,transparent 40%); }

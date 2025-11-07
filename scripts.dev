@@ -1,0 +1,5 @@
+"scripts": {
+  "dev": "cross-env NEXT_DISABLE_DEV_TURBOPACK=1 next dev",
+  "build": "next build",
+  "start": "next start"
+}

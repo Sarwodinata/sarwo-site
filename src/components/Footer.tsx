@@ -1,12 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="text-center py-6 mt-20 border-t bg-green text-sm text-slate-600">
-      <p>
-        © {new Date().getFullYear()} Sarwo Dinata ·{" "}
-        <span className="text-primary font-semibold">
-          Belajar, membangun dan berbagi
-        </span>
-      </p>
+    <footer className="border-t border-black/5 dark:border-white/10 mt-10">
+      <div className="mx-auto max-w-6xl px-6 py-8 text-sm text-[var(--muted)] text-center">
+        © {new Date().getFullYear()} Sarwo Site • Dibuat dengan fokus pada aksesibilitas & performa.
+      </div>
     </footer>
   );
 }
