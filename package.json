@@ -4,10 +4,12 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "cross-env NEXT_DISABLE_DEV_TURBOPACK=1 next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
+  "engines": { "node": ">=18.17.0" }
+},
   "dependencies": {
     "next": "16.0.1",
     "react": "^18.3.1",
